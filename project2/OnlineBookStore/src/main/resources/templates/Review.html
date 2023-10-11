@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<style>
+body{
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.4)),url(https://wallpaperbat.com/img/59557-pink-books-wallpaper.jpg);
+    height: 100vh;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+.container {
+background-color :  rgba(148, 148, 148,0.3) ;
+height : 300px;
+width : 400px ;
+padding : 15px 20px ;
+border-radius : 15px;
+margin-top : 100px ;
+margin-left : 500px ;
+text-align : center ;
+border: 1px solid White;
+}
+h1,h4{
+color : white ;
+}
+
+input {
+font-size : 20px ;
+}
+
+@media screen and (max-width: 600px) {
+   .card input[type=text] {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+   input[type=text] {
+    border: 1px solid #ccc;
+  }
+}
+
+@media (max-width:600px){
+    .wrapper {
+width: 100%;
+}
+}
+</style>
+<body>
+<div class = "container">
+<div class ="title"><h1>Review</h1>
+</div>
+<div class = "rating" >
+<form th:action="@{/reviwed}" method = "post">
+<input type ="radio" value ="poor"><b style ="color : white;">Poor</b><br><br>
+<input type ="radio" value ="Average"><b style ="color : white;">Average</b> <br><br>
+<input type ="radio" value ="good"><b style ="color : white;">Good </b><br><br>
+
+<input type ="submit">
+</form>
+</div>
+</div>
+</body>
+</html>

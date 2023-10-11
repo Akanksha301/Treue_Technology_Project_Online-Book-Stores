@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<style>
+
+body{
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(rgba(0,0,0,0.9),rgba(0,0,0,0.4)),url(https://www.pixelstalk.net/wp-content/uploads/2016/06/Book-HD-Wallpapers-download.jpeg);
+    height: 100vh;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+}
+
+table, th, td {
+  border: 1px solid black;
+  text-align : center ;
+  height : 100% ;
+  color : white ;
+}
+
+td {
+background-color :  rgba(148, 148, 148,0.3) ;
+  text-align : center ;
+   height : 100px ;
+}
+button {
+background : pink;
+color : black ;
+height : 40px ;
+width : 110px ;
+font-size : 15px ;
+}
+
+</style>
+<body >
+<div class = "container p-5" >
+<table style="width:100%">
+  <tr >
+    <th>Book Id</th>
+    <th>Book Name</th>
+    <th>Book Author</th>
+    <th>Book Type</th>
+    <th>Book Price</th>
+    <th>Image</th>
+    <th>Buy Book</th>
+    <th>Add To Cart</th>
+    <th>Give Review</th>
+    
+  </tr>
+  <tr th:each="b : ${books}">
+    <td>[[${b.id}]]</td>
+    <td><h3>[[${b.BookName}]]</h3></td>
+    <td>[[${b.BookAuthor}]]</td>
+    <td>[[${b.BookType}]]</td>
+    <td>[[${b.price}]]</td>
+    <td><img src =[[${b.url}]]></td>
+    <td>
+    <a th:href="@{'/buying/'+${b.id}}" class = "btn"><button>Buy Book</button></a>
+    </td>
+    <td><a th:href="@{'/addtocart/'+${b.id}}" class = "btn"><button>Add To Cart</button></a></td>
+    <td><a th:href="@{'/review/'+${b.id}}" class = "btn"><button>Give Review</button></a></td>
+  </tr>
+  
+</table>
+</div>
+</body>
+</html>

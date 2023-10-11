@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.thymeleaf.org ">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:action="@{/bookadded}" th:object="${add}" method ="post">
+Id <input type = "number" th:field="*{id}"><br><br>
+Book Name <input type = "text" th:field="*{BookName}"><br><br>
+Book Author <input type = "text" th:field="*{BookAuthor}"><br><br>
+Book Type <input type = "text" th:field="*{BookType}"><br><br>
+Book Price <input type = "number" th:field="*{price}"><br><br>
+Url <input type = "text" th:field="*{url}"><br><br>
+<input type ="submit" >
+</form>
+</body>
+</html>
